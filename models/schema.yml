@@ -1,0 +1,33 @@
+version: 2
+
+sources:
+  - name: raw_table
+    schema: dbt_stalse
+    database: dw-stalse-01
+    description: raw data of table.
+    tables:
+      - name: table1
+        columns:
+          - name: column1
+            description: description column1.
+            tests:
+              - unique
+              - not_null
+
+      - name: table2
+        columns:
+          - name: column2
+            description: description column2.
+            tests:
+              - unique
+              - not_null
+
+
+models:
+  - name: base_table1
+    config:
+      materialized: view  
+ 
+  - name: base_table2
+    config:
+      materialized: view  

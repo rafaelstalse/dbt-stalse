@@ -36,4 +36,3 @@ WITH parsed_json_contacts AS (
 )
 
 SELECT * FROM parsed_json_contacts
-LIMIT 1000

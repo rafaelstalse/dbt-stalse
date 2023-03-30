@@ -2,32 +2,32 @@ version: 2
 
 sources:
   - name: raw_table
-    schema: dbt_stalse
+    schema: hubspot_ftb
     database: dw-stalse-01
     description: raw data of table.
     tables:
-      - name: table1
+      - name: _airbyte_raw_companies
         columns:
-          - name: column1
-            description: description column1.
+          - name: _airbyte_data
+            description: description airbyte_data.
             tests:
               - unique
               - not_null
 
-      - name: table2
+      - name: _airbyte_raw_contacts
         columns:
-          - name: column2
-            description: description column2.
+          - name: _airbyte_data
+            description: description airbyte_data.
             tests:
               - unique
               - not_null
 
 
 models:
-  - name: base_table1
+  - name: base_companies
     config:
-      materialized: view  
- 
-  - name: base_table2
+      materialized: view
+
+  - name: base_contacts
     config:
-      materialized: view  
+      materialized: view 

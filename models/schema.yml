@@ -14,8 +14,20 @@ sources:
               - unique
               - not_null
 
+      - name: _airbyte_raw_contacts
+        columns:
+          - name: _airbyte_data
+            description: description airbyte_data.
+            tests:
+              - unique
+              - not_null
+
 
 models:
   - name: base_companies
+    config:
+      materialized: view
+
+  - name: base_contacts
     config:
       materialized: view 
